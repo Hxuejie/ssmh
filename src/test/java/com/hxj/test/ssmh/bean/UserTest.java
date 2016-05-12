@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
+import com.hxj.test.ssmh.dao.UserDao;
+
 /**
  * spring bean 测试<BR>
  * 
@@ -17,7 +19,7 @@ public class UserTest {
 
 	@Before
 	public void setUp() throws Exception {
-		context = new AnnotationConfigApplicationContext("com.hxj.test.ssmh.bean");
+		context = new AnnotationConfigApplicationContext("com.hxj.test.ssmh.dao");
 	}
 
 	@After
@@ -29,8 +31,8 @@ public class UserTest {
 	 */
 	@Test
 	public void testAnnotationScan() {
-		User user = context.getBean(User.class);
-		Assert.notNull(user);
+		UserDao userDao = context.getBean(UserDao.class);
+		Assert.notNull(userDao);
 	}
 
 }

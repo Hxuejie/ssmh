@@ -1,8 +1,6 @@
 package com.hxj.test.ssmh.bean;
 
-import org.springframework.stereotype.Component;
 
-@Component
 public class User {
 	private int		id;
 	private String	name;
