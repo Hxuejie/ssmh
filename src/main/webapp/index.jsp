@@ -8,5 +8,8 @@
 </head>
 <body>
 	Hello SSMH!!!
+	<form action="login" method="post">
+		<button type="submit">LOGIN</button>
+	</form>
 </body>
 </html>
