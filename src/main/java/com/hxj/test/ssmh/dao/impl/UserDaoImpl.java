@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
@@ -18,20 +17,12 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(User user) {
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(user);
-		session.getTransaction().commit();
-		session.close();
+		sessionFactory.getCurrentSession().save(user);
 	}
 
 	@Override
 	public User findUser(int id) {
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		List<?> result = session.createQuery("from com.hxj.test.ssmh.entity.User").list();
-		session.getTransaction().commit();
-		session.close();
+		List<?> result = sessionFactory.getCurrentSession().createQuery("from com.hxj.test.ssmh.entity.User").list();
 		if (result.isEmpty()) {
 			return null;
 		}
