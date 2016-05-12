@@ -38,7 +38,7 @@ public class UserTest {
 	}
 
 	@Test
-	public void test1Save() {
+	public void testSave() {
 		User user = new User();
 		user.setName("abc");
 		user.setAge(123);
@@ -54,7 +54,10 @@ public class UserTest {
 	}
 
 	@Test
-	public void test2Query() {
+	public void testQuery() {
+		//create test data
+		testSave();
+		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		List<?> result = session.createQuery("from com.hxj.test.ssmh.entity.User").list();

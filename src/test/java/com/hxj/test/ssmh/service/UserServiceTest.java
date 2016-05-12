@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
 
 import com.hxj.test.ssmh.entity.User;
@@ -19,8 +19,7 @@ public class UserServiceTest {
 
 	@Before
 	public void setUp() throws Exception {
-		context = new AnnotationConfigApplicationContext("com.hxj.test.ssmh.dao", //Dao
-														 "com.hxj.test.ssmh.service"); //Service
+		context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	}
 
 	@After

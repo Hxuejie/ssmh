@@ -4,10 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
-
-import com.hxj.test.ssmh.dao.UserDao;
 
 /**
  * spring bean 测试<BR>
@@ -19,7 +17,7 @@ public class UserDaoTest {
 
 	@Before
 	public void setUp() throws Exception {
-		context = new AnnotationConfigApplicationContext("com.hxj.test.ssmh.dao");
+		context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	}
 
 	@After
