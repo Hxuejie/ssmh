@@ -2,8 +2,8 @@ package com.hxj.test.ssmh.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.hxj.test.ssmh.bean.User;
 import com.hxj.test.ssmh.dao.UserDao;
+import com.hxj.test.ssmh.entity.User;
 
 @Repository
 public class UserDaoImpl implements UserDao {

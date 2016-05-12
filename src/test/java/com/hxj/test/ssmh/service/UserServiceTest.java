@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
-import com.hxj.test.ssmh.bean.User;
+import com.hxj.test.ssmh.entity.User;
 
 /**
  * 测试 string Autowired功能

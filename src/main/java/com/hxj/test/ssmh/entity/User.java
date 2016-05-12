@@ -1,10 +1,19 @@
-package com.hxj.test.ssmh.bean;
+package com.hxj.test.ssmh.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 	private int		id;
 	private String	name;
 	private int		age;
 
+	@Id //主键
+	@GeneratedValue(strategy = GenerationType.AUTO) //自动生成ID
 	public int getId() {
 		return id;
 	}
@@ -13,6 +22,7 @@ public class User {
 		this.id = id;
 	}
 
+	@Column(length = 30) //varchar(30)
 	public String getName() {
 		return name;
 	}

@@ -1,6 +1,6 @@
 package com.hxj.test.ssmh.dao;
 
-import com.hxj.test.ssmh.bean.User;
+import com.hxj.test.ssmh.entity.User;
 
 public interface UserDao {
 

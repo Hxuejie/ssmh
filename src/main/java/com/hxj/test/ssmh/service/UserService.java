@@ -3,8 +3,8 @@ package com.hxj.test.ssmh.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hxj.test.ssmh.bean.User;
 import com.hxj.test.ssmh.dao.UserDao;
+import com.hxj.test.ssmh.entity.User;
 
 @Service
 public class UserService {
