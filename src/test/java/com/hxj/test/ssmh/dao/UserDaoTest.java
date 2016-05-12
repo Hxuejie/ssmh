@@ -1,4 +1,4 @@
-package com.hxj.test.ssmh.bean;
+package com.hxj.test.ssmh.dao;
 
 import org.junit.After;
 import org.junit.Before;
@@ -14,7 +14,7 @@ import com.hxj.test.ssmh.dao.UserDao;
  * 
  * @author Hxuejie hxuejie@126.com
  */
-public class UserTest {
+public class UserDaoTest {
 	private ApplicationContext	context;
 
 	@Before
