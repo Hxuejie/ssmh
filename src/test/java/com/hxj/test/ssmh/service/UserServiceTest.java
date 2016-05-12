@@ -1,11 +1,11 @@
 package com.hxj.test.ssmh.service;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.util.Assert;
 
 import com.hxj.test.ssmh.entity.User;
 
@@ -29,10 +29,23 @@ public class UserServiceTest {
 	@Test
 	public void testCreateUser() {
 		UserService userService = context.getBean(UserService.class);
-		Assert.notNull(userService);
+		Assert.assertNotNull(userService);
 		User user = userService.createUser("hxj");
-		Assert.notNull(user);
-		Assert.state("hxj".equals(user.getName()));
+		Assert.assertNotNull(user);
+		Assert.assertEquals(user.getName(), "hxj");
+	}
+
+	@Test
+	public void testFindUser() {
+		//create test data
+		testCreateUser();
+		
+		UserService userService = context.getBean(UserService.class);
+		Assert.assertNotNull(userService);
+		User user = userService.findUser(1);
+		Assert.assertNotNull(user);
+		Assert.assertEquals(user.getName(), "hxj");
+		
 	}
 
 }

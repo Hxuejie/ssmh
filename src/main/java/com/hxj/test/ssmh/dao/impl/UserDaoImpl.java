@@ -1,5 +1,7 @@
 package com.hxj.test.ssmh.dao.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.hibernate.Session;
@@ -16,12 +18,24 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(User user) {
-		System.out.println("insert user to db:" + user);
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
 		session.close();
+	}
+
+	@Override
+	public User findUser(int id) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		List<?> result = session.createQuery("from com.hxj.test.ssmh.entity.User").list();
+		session.getTransaction().commit();
+		session.close();
+		if (result.isEmpty()) {
+			return null;
+		}
+		return (User) result.get(0);
 	}
 
 	public SessionFactory getSessionFactory() {

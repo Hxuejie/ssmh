@@ -17,6 +17,10 @@ public class UserService {
 		userDao.addUser(user);
 		return user;
 	}
+	
+	public User findUser(int id){
+		return userDao.findUser(id);
+	}
 
 	public UserDao getUserDao() {
 		return userDao;
